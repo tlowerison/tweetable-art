@@ -66,25 +66,67 @@ public class Driver extends JPanel implements MouseListener, KeyListener {
     public void keyPressed(KeyEvent e) {}
     public void keyTyped(KeyEvent e) {
         if (e.getKeyChar() == 'r' || e.getKeyChar() == 'R') {
-            _design = new Julia(
-                    _quality,
-                    Design.ORIGINX,
-                    Design.ORIGINY,
-                    _pallete,
-                    _iterations
-            );
+        	if (_designStyle == 'j') {
+		        _design = new Julia(
+		            _quality,
+		            Design.ORIGINX,
+		            Design.ORIGINY,
+		            _pallete,
+		            _iterations
+		        );
+		    } else if (_designStyle == 'm') {
+		    	_design = new Mandelbrot(
+		    		_quality,
+		            Design.DEFAULTX,
+		            Design.DEFAULTY,
+		            _pallete,
+		            _iterations
+		    	);
+		    }
             _image = _design.image();
             this.repaint();
         } else if (e.getKeyChar() == 'p' || e.getKeyChar() == 'P') {
            	_pallete = Pallete.STOCK_PALLETES[
            		(int) (Math.random() * Pallete.STOCK_PALLETES.length)
            	];
+        	if (_designStyle == 'j') {
+		        _design = new Julia(
+		            _quality,
+		            Design.ORIGINX,
+		            Design.ORIGINY,
+		            _pallete,
+		            _iterations
+		        );
+		    } else if (_designStyle == 'm') {
+		    	_design = new Mandelbrot(
+		    		_quality,
+		            Design.DEFAULTX,
+		            Design.DEFAULTY,
+		            _pallete,
+		            _iterations
+		    	);
+		    }
+            _image = _design.image();
+            this.repaint();
+        } else if (e.getKeyChar() == 'm' || e.getKeyChar() == 'M') {
+        	_designStyle = 'm';
+        	_design = new Mandelbrot(
+        		_quality,
+                Design.DEFAULTX,
+                Design.DEFAULTY,
+                _pallete,
+                _iterations
+        	);
+            _image = _design.image();
+            this.repaint();
+        } else if (e.getKeyChar() == 'j' || e.getKeyChar() == 'J') {
+        	_designStyle = 'j';
         	_design = new Julia(
-                    _quality,
-                    Design.ORIGINX,
-                    Design.ORIGINY,
-                    _pallete,
-                    _iterations
+                _quality,
+                Design.ORIGINX,
+                Design.ORIGINY,
+                _pallete,
+                _iterations
             );
             _image = _design.image();
             this.repaint();
@@ -100,4 +142,5 @@ public class Driver extends JPanel implements MouseListener, KeyListener {
 	private int _quality = 512;
 	private int _iterations = 100;
 	private Pallete _pallete = Pallete.CORAL;
+	private char _designStyle = 'j';
 }

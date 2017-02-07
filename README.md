@@ -4,3 +4,5 @@ Soon will contain parametric RGB generators.
 
 Press 'r' to refresh for a new fractal in the Julia set.
 Press 'p' to change color schema to a random pallete.
+Press 'j' to switch to generating Julia sets.
+Press 'm' to switch to generating Mandelbrot sets.
