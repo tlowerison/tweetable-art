@@ -34,11 +34,11 @@ public class Pallete {
 	public final int length;
 	private int _iterations;
 	public static final Pallete CORAL = new Pallete(
-		new Color(0, 0, 80),
-		new Color(255, 255, 255),
-		new Color(240, 120, 0),
-		new Color(128, 0, 0),
-		new Color(0, 0, 0));
+		new Color(0x000050),
+		new Color(0xFFFFFF),
+		new Color(0xE06800),
+		new Color(0x800000),
+		new Color(0x000000));
 	public static final Pallete WARM_RAINBOW = new Pallete(
 		new Color(0x8993E0),
 		new Color(0xE06754),
@@ -69,4 +69,12 @@ public class Pallete {
 		new Color(0xFF8C42),
 		new Color(0xFF3C38),
 		new Color(0xA23E48));
+	public static final Pallete[] STOCK_PALLETES = new Pallete[] {
+		CORAL,
+		WARM_RAINBOW,
+		THERMOMETER,
+		FRENCH,
+		CRAYONS,
+		BRIGHT
+	};
 }

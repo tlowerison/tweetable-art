@@ -25,7 +25,7 @@ public class Driver extends JPanel implements MouseListener, KeyListener {
 			_quality,
 			Design.ORIGINX,
 			Design.ORIGINY,
-			Pallete.WARM_RAINBOW,
+			_pallete,
 			_iterations
 		);
 		_image = _design.image();
@@ -70,7 +70,20 @@ public class Driver extends JPanel implements MouseListener, KeyListener {
                     _quality,
                     Design.ORIGINX,
                     Design.ORIGINY,
-                    Pallete.WARM_RAINBOW,
+                    _pallete,
+                    _iterations
+            );
+            _image = _design.image();
+            this.repaint();
+        } else if (e.getKeyChar() == 'p' || e.getKeyChar() == 'P') {
+           	_pallete = Pallete.STOCK_PALLETES[
+           		(int) (Math.random() * Pallete.STOCK_PALLETES.length)
+           	];
+        	_design = new Julia(
+                    _quality,
+                    Design.ORIGINX,
+                    Design.ORIGINY,
+                    _pallete,
                     _iterations
             );
             _image = _design.image();
@@ -86,4 +99,5 @@ public class Driver extends JPanel implements MouseListener, KeyListener {
 	private int _height = 512;
 	private int _quality = 512;
 	private int _iterations = 100;
+	private Pallete _pallete = Pallete.CORAL;
 }
