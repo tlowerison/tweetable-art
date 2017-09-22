@@ -1,8 +1,7 @@
 # tweetable-art
 Clone or download zip
-To run app, open a terminal in tweetable-art folder<br />
-Enter command:<br />
-  java Driver<br />
+To run app, open a terminal in tweetable-art folder, enter command:<br />
+  -java Driver<br />
 <br />
 Includes fractal generators for the Mandelbrot and the Julia sets<br />
 <br />
